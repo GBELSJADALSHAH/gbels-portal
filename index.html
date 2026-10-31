@@ -1,46 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GBELS JADAL SHAH [CR:4] - Official Portal</title>
-<style>
-:root{--green:#0b5d2a;--gold:#f0c040}
-body{margin:0;font-family:Arial,sans-serif;background:#f7fdf9}
-.header{background:linear-gradient(135deg,#083d1c,#0b5d2a);color:white;text-align:center;padding:20px 12px}
-.badge{background:var(--gold);color:#000;padding:5px 12px;border-radius:20px;font-weight:800;display:inline-block;margin-top:8px}
-.wrap{max-width:900px;margin:auto;padding:12px}
-.card{background:white;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
-.grid4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.box{background:#f0faf2;border-radius:12px;text-align:center;padding:14px}
-.box b{font-size:26px;color:var(--green);display:block}
-table{width:100%;border-collapse:collapse;margin-top:8px}
-th{background:var(--green);color:white;padding:10px;text-align:left;font-size:12px}
-td{padding:9px;font-size:13px;border-bottom:1px solid #eee}
-tr.total{background:#e8f5e9;font-weight:800}
-h2{font-size:15px;color:var(--green);border-left:4px solid var(--gold);padding-left:8px}
-</style>
-</head>
-<body>
-<div class="header">
-<h1 style="margin:0">🏫 GBELS JADAL SHAH</h1>
-<small>[CR: 4] SEMIS 416030422 | Naushero Feroze</small><br>
-<div class="badge">✅ 322 STUDENTS - 163 Boys + 159 Girls</div>
-<div style="font-size:12px;margin-top:6px;opacity:0.9">16 Girls New Added</div>
-</div>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Developed by Sayed Raza Muhammad Shah - IT Focal Person - UC Kot Sataboo</title><style>:root{--g:#0b5d2a;--y:#f0c040}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial;background:#f0f5f0}.h{background:var(--g);color:var(--y);padding:6px;font-size:10px;font-weight:700;text-align:center}.h2{background:linear-gradient(135deg,#083d1c,var(--g));color:#fff;padding:14px;text-align:center}.tabs{display:flex;gap:6px;margin:10px}.tab{flex:1;padding:12px;border-radius:10px;text-align:center;font-weight:700;font-size:12px;cursor:pointer;border:2px solid var(--g)}.tab.on{background:var(--g);color:#fff}.tab.off{background:#fff;color:var(--g)}.card{background:#fff;border-radius:14px;padding:14px;margin:10px;box-shadow:0 4px 8px rgba(0,0,0,.08)}.inp{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;margin:4px 0;font-size:13px}.btn{background:var(--g);color:#fff;border:0;padding:11px;border-radius:8px;width:100%;font-weight:700;margin-top:6px;cursor:pointer}.btn2{background:var(--y);color:#000}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px}.report{border:2px solid var(--g);border-radius:12px;padding:12px;background:#fff;margin:10px 0}.pic{width:100%;max-height:200px;object-fit:cover;border-radius:8px;border:1px solid #ddd;margin:6px 0}.modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:9999;overflow:auto;padding:20px}.modalBox{background:#fff;border-radius:14px;padding:16px;max-width:600px;margin:20px auto}.sec{display:none}.sec.on{display:block}.footer{background:linear-gradient(135deg,#061a0d,var(--g));color:#fff;padding:18px;text-align:center;margin-top:20px;border-top:4px solid var(--y)}.footer b{color:var(--y)}.footer a{color:var(--y);text-decoration:none;font-weight:700}th,td{border:1px solid #ddd;padding:5px;font-size:10px;text-align:center}th{background:var(--g);color:#fff}table{width:100%;border-collapse:collapse;margin-top:8px}</style></head><body>
+<div class="h">GOVT OF SINDH - SCHOOL EDUCATION - CELL HEAD PORTAL - UC KOT SATABOO - SEMIS 416030422 - DEVELOPED BY SAYED RAZA MUHAMMAD SHAH - IT FOCAL PERSON</div>
+<div class="h2"><h1 style="font-size:17px">GBELS JADAL SHAH [CR:4] - CELL HEAD - UC Kot Sataboo</h1><p style="font-size:12px;color:var(--y)">322 Students (163 Boys + 159 Girls) | Auto Monthly Report + Pic + Teacher Subject Select</p><p style="font-size:11px;margin-top:6px">Developed by <b style="color:var(--y)">Sayed Raza Muhammad Shah</b> | IT Focal Person | 03008960276</p></div>
 
-<div class="wrap">
-<div class="card">
-<h2>📊 Final Dashboard</h2>
-<div class="grid4">
-<div class="box"><b>322</b>Total Students<br>163 B + 159 G</div>
-<div class="box"><b>163</b>Boys</div>
-<div class="box"><b>159</b>Girls<br>143+16</div>
-<div class="box"><b>4</b>Teachers</div>
+<div class="tabs"><div id="t1" class="tab on" onclick="showTab('admin')">👨‍💼 Cell Head Admin</div><div id="t2" class="tab off" onclick="showTab('feeder')">🏫 Feeder School Sign In</div></div>
+
+<div id="admin" class="sec on">
+<div class="card"><h3 style="text-align:center;color:var(--g)">👨‍💼 Cell Head Admin - UC Kot Sataboo - Developed by Sayed Raza Muhammad Shah</h3><div class="grid2"><input id="aU" class="inp" value="416030422"><input id="aP" class="inp" type="password" value="123"></div><button class="btn" onclick="loginAdmin()">✅ Admin Sign In - IT Focal Person</button></div>
+<div id="aDash" style="display:none">
+<div class="card"><h3>➕ Add Feeder School - IT Focal Person: Sayed Raza Muhammad Shah</h3><div style="background:#e8f5e9;padding:10px;border-radius:10px;border:1px dashed var(--g)"><input id="fn" class="inp" placeholder="School Name - e.g. GBPS Haji Khan"><div class="grid2"><input id="fs" class="inp" placeholder="SEMIS Code"><input id="fp" class="inp" placeholder="Password e.g. 123"></div><div class="grid2"><input id="fu" class="inp" value="Kot Sataboo" placeholder="UC"><input id="fh" class="inp" placeholder="HM Name"></div><button class="btn" onclick="addF()">✅ Add Feeder - Login Ready</button></div><table id="fList"><tr><th>School</th><th>SEMIS/Pass</th><th>UC/HM</th><th>Action</th></tr></table></div>
+<div class="card"><h3>📋 AUTO MONTHLY REPORTS - Admin View - Pic + Subject - Developed by Sayed Raza Muhammad Shah <button class="btn2" style="width:auto;float:right;padding:6px" onclick="expAll()">Excel</button></h3><div id="adminReports"></div></div>
 </div>
 </div>
 
-<div class="card">
-<h2>👦👧 Enrollment Detail</h2>
-<table>
-<tr><th>Section</th><th>Boys</th><th>Girls
+<div id="feeder" class="sec">
+<div class="card"><h3 style="text-align:center;color:var(--g)">🏫 Feeder School Sign In - Teacher Subject + Auto Report + Pic</h3><div class="grid2"><input id="fuS" class="inp" placeholder="Feeder SEMIS"><input id="fuP" class="inp" type="password" placeholder="Password"></div><button class="btn" onclick="loginFeeder()">🏫 Sign In - Monthly Report Banao</button><table id="loginList" style="margin-top:10px"><tr><th>School</th><th>SEMIS/Pass</th><th>UC</th></tr></table></div>
+<div id="fDash" style="display:none">
+<div class="card" style="background:linear-gradient(135deg,#083d1c,var(--g));color:#fff"><h3 id="fT" style="color:var(--y)">Feeder Dashboard</h3><p id="fI" style="font-size:11px"></p><p style="font-size:10px;color:var(--y)">Developed by Sayed Raza Muhammad Shah - IT Focal Person - 03008960276</p></div>
+<div class="card"><h3>📝 Auto Monthly Report - Teacher Subject + Pic - Developed by Sayed Raza Muhammad Shah</h3>
+<div class="grid2"><select id="fMonth" class="inp"><option>October 2026</option><option>November 2026</option><option>December 2026</option><option>January 2027</option></select><input id="fTeacher" class="inp" placeholder="Teacher Name"></div>
+<div class="grid2"><div><label style="font-size:11px;font-weight:700">Subject Select Karo:</label><select id="fSub" class="inp"><option value="">-- Subject Select --</option><option>Sindhi</option><option>English</option><option>Urdu</option><option>Mathematics</option><option>Science</option><option>Social Studies (SST)</option><option>Islamiat</option><option>Computer</option><option>General Knowledge</option><option>Drawing</option><option>All Subjects (Class Teacher)</option></select></div><div><label style="font-size:11px;font-weight:700">Class:</label><select id="fClass" class="inp"><option>Kachi</option><option>Class I</option><option>Class II</option><option>Class III</option><option>Class IV</option><option>Class V</option><option>Class VI</option><option>Class VII</option><option>Class VIII</option><option>All Classes (I-V)</option><option>All Classes (VI-VIII)</option></select></div></div>
+<div class="grid2"><div><label style="font-size:11px">Boys:</label><input id="fB" class="inp" type="number"></div><div><label style="font-size:11px">Girls:</label><input id="fG" class="inp" type="number"></div></div>
+<div class="grid2"><div><label style="font-size:11px">Total (Auto):</label><input id="fTot" class="inp" readonly style="background:#f5f5f5"></div><div><label style="font-size:11px">Attendance %:</label><input id="fAtt" class="inp" type="number"></div></div>
+<div class="grid2"><div><label style="font-size:11px">New:</label><input id="fNew" class="inp" type="number"></div><div><label style="font-size:11px">Drop:</label><input id="fDrop" class="inp" type="number"></div></div>
+<div><label style="font-size:12px;font-weight:700">📸 Monthly Report Pic Upload:</label><input id="fPic" type="file" accept="image/*" class="inp" onchange="picUp(event)"><img id="picPrev" class="pic" style="display:none"></div>
+<div><label style="font-size:11px">Syllabus / Remarks:</label><input id="fRem" class="inp" placeholder="e.g. Oct me Sindhi lesson 1-5 complete, 92% attendance - Developed by Sayed Raza"></div>
+<div class="report" id="autoPreview" style="display:none"><h4 style="color:var(--g);text-align:center">📄 AUTO MONTHLY REPORT - Preview - Developed by Sayed Raza Muhammad Shah</h4><div id="prevText" style="font-size:12px;line-height:1.6"></div><img id="prevPic" class="pic" style="display:none"></div>
+<button class="btn" onclick="calcPreview()">👁️ Preview Auto Report Dekho</button><button class="btn btn2" onclick="submitRep()">✅ Submit Auto Report - Pic + Subject - Admin ko jayega</button></div>
+<div class="card"><h3>📄 Meri Reports - Developed by Sayed Raza Muhammad Shah</h3><div id="myReports"></div></div>
+</div>
+</div>
+
+<div class="footer"><p style="font-size:14px"><b>Developed by Sayed Raza Muhammad Shah</b></p><p style="font-size:13px;margin-top:4px"><b>IT Focal Person</b> | Cell Head GBELS JADAL SHAH [CR:4] - UC Kot Sataboo</p><p style="font-size:14px;margin-top:6px">📞 <a href="tel:03008960276">03008960276</a> | SEMIS 416030422 | CR:4 | 322 Students (163B+159G)</p><p style="font-size:11px;margin-top:8px">Taluka Moro | District Naushero Feroze | School Education Dept | Govt of Sindh</p><p style="font-size:10px;margin-top:8px;opacity:.9">Powered by Cell Head School GBELS JADAL SHAH | Auto Monthly Report + Pic + Teacher Subject Select | UC Kot Sataboo Cell Head Portal</p><p style="font-size:10px;margin-top:6px;color:var(--y)">© 2026 - Developed by Sayed Raza Muhammad Shah - IT Focal Person - GBELS JADAL SHAH - 03008960276 - All Rights Reserved</p></div>
+
+<div id="viewModal" class="modal" onclick="this.style.display='none'"><div class="modalBox" onclick="event.stopPropagation()"><div id="modalContent"></div><button class="btn" onclick="document.getElementById('viewModal').style.display='none'">Close</button><button class="btn btn2" onclick="window.print()">🖨️ Print Report</button></div></div>
+
+<script>
+let feeders=JSON.parse(localStorage.getItem('feeder_final_dev_name')||'[]');
+let reports=JSON.parse(localStorage.getItem('reports_final_dev_name')||'[]');
+let cur=null;let curPic='';
+
+function showTab(id){
+document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+document.getElementById(id).classList.add('on');
+document.getElementById('t1').className=id==='admin'?'tab on':'tab off';
+document.getElementById('t2').className=id==='feeder'?'tab on':'tab off';
+if(id==='feeder')renderLoginList();
+}
+function loginAdmin(){
+let u=document.getElementById('aU').value,p=document.getElementById('aP').value;
+if(u==='416030422' && p==='123'){document.getElementById('aDash').style.display='block';renderF();renderAdminReports();alert('Admin Login - Developed by Sayed Raza Muhammad Shah - IT Focal Person - 03008960276');}
+else alert('416030422 / 123 use karo');
+}
+function addF(){
+let n=document.getElementById('fn').value,s=document.getElementById('fs').value,pass=document.getElementById('fp').value||'123',uc=document.getElementById('fu').value||'Kot Sataboo',hm=document.getElementById('fh').value;
+if(!n||!s)return alert('Name aur SEMIS likho');
+feeders.push({name:n,semis:s,password:pass,uc:uc,hm:hm});
+localStorage.setItem('feeder_final_dev_name',JSON.stringify(feeders));
+renderF();renderLoginList();
+alert('Feeder Added - '+n+' - Developed by Sayed Raza Muhammad Shah - IT Focal Person');
+}
+function renderF(){
+let tbl=document.getElementById('fList');
+let h=`<tr><th>School</th><th>SEMIS/Pass</th><th>UC/HM</th><th>Action</th></tr><tr><td><b>GBELS JADAL SHAH (Hub)</b></td><td>416030422<br>123</td><td>Kot Sataboo<br>Sayed Raza Muhammad Shah</td><td>HUB</td></tr>`;
+feeders.forEach((f,i)=>{h+=`<tr><td><b>${f.name}</b></td><td>${f.semis}<br><b>${f.password}</b></td><td>${f.uc}<br>${f.hm}</td><td><button style="background:#d32f2f;color:#fff;border:0;padding:4px 8px;border-radius:5px" onclick="delF(${i})">Delete</button></td></tr>`;});
+tbl.innerHTML=h;
+}
+function delF(i){if(confirm('Delete?')){feeders.splice(i,1);localStorage.setItem('feeder_final_dev_name',JSON.stringify(feeders));renderF();renderLoginList();}}
+function renderLoginList(){
+let tbl=document.getElementById('loginList');
+let h=`<tr><th>School</th><th>SEMIS/Pass</th><th>UC</th></tr><tr><td>GBELS JADAL SHAH (Hub)</td><td>416030422 / 123</td><td>Kot Sataboo</td></tr>`;
+feeders.forEach(f=>{h+=`<tr><td><b>${f.name}</b></td><td>${f.semis} / ${f.password}</td><td>${f.uc}</td></tr>`;});
+tbl.innerHTML=h;
+}
+function loginFeeder(){
+let u=document.getElementById('fuS').value,p=document.getElementById('fuP').value;
+let found=feeders.find(f=>f.semis===u && f.password===p);
+if(u==='416030422' && p==='123')found={name:'GBELS JADAL SHAH (Hub)',semis:'416030422',password:'123',uc:'Kot Sataboo',hm:'Sayed Raza Muhammad Shah'};
+if(!found)return alert('SEMIS / Password galat');
+cur=found;
+document.getElementById('fDash').style.display='block';
+document.getElementById('fT').innerText='🏫 '+found.name;
+document.getElementById('fI').innerText='SEMIS: '+found.semis+' | UC: '+found.uc+' | HM: '+found.hm+' | Developed by Sayed Raza Muhammad Shah - IT Focal Person - 03008960276';
+renderMy();
+alert('Feeder Login - '+found.name+' - Developed by Sayed Raza Muhammad Shah');
+}
+function picUp(e){
+let file=e.target.files[0];if(!file)return;let r=new FileReader();
+r.onload=function(ev){curPic=ev.target.result;document.getElementById('picPrev').src=curPic;document.getElementById('picPrev').style.display='block';calcPreview();};r.readAsDataURL(file);
+}
+document.getElementById('fB')?.addEventListener('input',calcTot);document.getElementById('fG')?.addEventListener('input',calcTot);
+function calcTot(){let b=parseInt(document.getElementById('fB').value||0),g=parseInt(document.getElementById('fG').value||0);document.getElementById('fTot').value=b+g;}
+function calcPreview(){
+let month=document.getElementById('fMonth').value,teacher=document.getElementById('fTeacher').value||'Teacher',sub=document.getElementById('fSub').value||'',cls=document.getElementById('fClass').value,b=document.getElementById('fB').value||0,g=document.getElementById('fG').value||0,tot=document.getElementById('fTot').value||0,att=document.getElementById('fAtt').value||0,nw=document.getElementById('fNew').value||0,dr=document.getElementById('fDrop').value||0,rem=document.getElementById('fRem').value||'';
+let html=`<b>GOVT OF SINDH - CELL HEAD UC KOT SATABOO</b><br><b>SEMIS: ${cur?.semis||''} | School: ${cur?.name||''} | UC: ${cur?.uc||''}</b><br><b>Monthly Report - ${month}</b><br><hr><b>Teacher:</b> ${teacher} | <b>Subject:</b> ${sub} | <b>Class:</b> ${cls}<br><b>Students:</b> B:${b} G:${g} T:${tot} Att:${att}%<br><b>New:</b> ${nw} | <b>Drop:</b> ${dr}<br><b>Syllabus:</b> ${rem}<br><b>Developed by Sayed Raza Muhammad Shah | IT Focal Person | 03008960276</b><br><b>Cell Head: GBELS JADAL SHAH | SEMIS 416030422 | Auto: ${new Date().toLocaleDateString()}</b>`;
+document.getElementById('prevText').innerHTML=html;document.getElementById('autoPreview').style.display='block';
+if(curPic){document.getElementById('prevPic').src=curPic;document.getElementById('prevPic').style.display='block';}
+}
+function submitRep(){
+if(!cur)return alert('Sign In karo');let month=document.getElementById('fMonth').value,teacher=document.getElementById('fTeacher').value||cur.hm,sub=document.getElementById('fSub').value,cls=document.getElementById('fClass').value,b=document.getElementById('fB').value||0,g=document.getElementById('fG').value||0,tot=document.getElementById('fTot').value||0,att=document.getElementById('fAtt').value||0,nw=document.getElementById('fNew').value||0,dr=document.getElementById('fDrop').value||0,rem=document.getElementById('fRem').value||'';
+if(!sub)return alert('Subject Select Karo');if(!curPic)return alert('Pic upload karo');
+let rep={date:new Date().toLocaleDateString(),semis:cur.semis,school:cur.name,uc:cur.uc,teacher:teacher,month:month,subject:sub,class:cls,boys:b,girls:g,total:tot,att:att,new:nw,drop:dr,remarks:rem,pic:curPic};
+reports.push(rep);localStorage.setItem('reports_final_dev_name',JSON.stringify(reports));renderAdminReports();renderMy();alert('Auto Report Submitted! Developed by Sayed Raza Muhammad Shah - IT Focal Person - 03008960276 - Subject: '+sub);
+}
+function renderAdminReports(){
+let div=document.getElementById('adminReports');if(reports.length===0){div.innerHTML='<p>No reports yet - Feeder Sign In karke report banao</p>';return;}let html='';reports.slice().reverse().forEach((r,i)=>{html+=`<div class="report"><b>${r.date} | ${r.school} (${r.semis}) | UC: ${r.uc}</b><br><b>Teacher:</b> ${r.teacher} | <b>Subject:</b> <span style="background:#f0c040;padding:2px 6px;border-radius:5px">${r.subject}</span> | <b>Class:</b> ${r.class} | <b>Month:</b> ${r.month}<br><b>B:</b>${r.boys} <b>G:</b>${r.girls} <b>T:</b>${r.total} <b>Att:</b>${r.att}% | <b>New:</b>${r.new} <b>Drop:</b>${r.drop}<br><b>Remarks:</b> ${r.remarks}<br>${r.pic?`<img src="${r.pic}" class="pic" style="max-height:150px">`:''}<br><button class="btn" style="width:auto;padding:6px 12px" onclick="viewReport(${reports.length-1-i})">👁️ View Full Report + Pic - Developed by Sayed Raza Muhammad Shah</button></div>`;});div.innerHTML=html;
+}
+function renderMy(){
+if(!cur)return;let div=document.getElementById('myReports');let my=reports.filter(r=>r.semis===cur.semis);if(my.length===0){div.innerHTML='<p>No reports yet</p>';return;}let html='';my.slice().reverse().forEach(r=>{html+=`<div class="report"><b>${r.date} | ${r.month} | Subject: ${r.subject} | Class: ${r.class}</b><br>B:${r.boys} G:${r.girls} T:${r.total} Att:${r.att}%<br>${r.remarks}<br>${r.pic?`<img src="${r.pic}" class="pic" style="max-height:120px">`:''}</div>`;});div.innerHTML=html;
+}
+function viewReport(idx){
+let r=reports[idx];let html=`<h3 style="color:var(--g);text-align:center">📄 AUTO MONTHLY REPORT - UC KOT SATABOO<br><small>Developed by Sayed Raza Muhammad Shah - IT Focal Person - 03008960276</small></h3><div style="border:2px solid var(--g);padding:12px;border-radius:10px"><b>GOVT OF SINDH - SCHOOL EDUCATION DEPT</b><br><b>Cell Head:</b> GBELS JADAL SHAH [CR:4] | SEMIS 416030422 | UC Kot Sataboo | 322 Students (163B+159G)<br><b>Feeder School:</b> ${r.school} | SEMIS: ${r.semis} | UC: ${r.uc}<br><hr><b>Month:</b> ${r.month} | <b>Date:</b> ${r.date}<br><b>Teacher:</b> ${r.teacher}<br><b>Subject:</b> <span style="background:var(--y);padding:4px 10px;border-radius:6px;font-weight:700">${r.subject}</span> | <b>Class:</b> ${r.class}<br><b>Students:</b> B:${r.boys} G:${r.girls} T:${r.total} Att:${r.att}%<br><b>New:</b> ${r.new} | <b>Drop:</b> ${r.drop}<br><b>Syllabus / Progress:</b> ${r.remarks}<br>${r.pic?`<b>Monthly Report Pic:</b><br><img src="${r.pic}" class="pic">`:''}<br><hr><b>Developed by Sayed Raza Muhammad Shah</b><br><b>IT Focal Person | Cell Head GBELS JADAL SHAH [CR:4] - UC Kot Sataboo</b><br><b>📞 03008960276 | SEMIS 416030422 | Taluka Moro | Naushero Feroze</b><br><b>Powered by Cell Head School GBELS JADAL SHAH | Govt of Sindh | © 2026</b><br><b>Auto Generated Monthly Report - ${r.date} - Developed by Sayed Raza Muhammad Shah - IT Focal Person - 03008960276</b></div>`;document.getElementById('modalContent').innerHTML=html;document.getElementById('viewModal').style.display='block';
+}
+function expAll(){
+let csv='Auto Monthly Report - UC Kot Sataboo - Developed by Sayed Raza Muhammad Shah - IT Focal Person - 03008960276 - SEMIS 416030422\nDate,SEMIS,School,UC,Teacher,Month,Subject,Class,Boys,Girls,Total,Att,New,Drop,Remarks\n';reports.forEach(r=>{csv+=`${r.date},${r.semis},${r.school.replace(/,/g,' ')},${r.uc},${r.teacher},${r.month},${r.subject},${r.class},${r.boys},${r.girls},${r.total},${r.att},${r.new},${r.drop},${r.remarks.replace(/,/g,' ')}\n`;});let b=new Blob([csv],{type:'text/csv'});let a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='Auto_Report_Developed_by_Sayed_Raza_Muhammad_Shah_IT_Focal_03008960276_UC_Kot_Sataboo.csv';a.click();
+}
+renderF();renderLoginList();renderAdminReports();
+</script></body></html>
