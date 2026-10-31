@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GBELS Cell Head - Teachers & Students</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui;background:#f1f5f9}
+header{background:#065f46;color:#fff;padding:14px}
+h1{font-size:14px}
+.card{background:#fff;border-radius:12px;padding:10px;margin:8px;box-shadow:0 1px 2px #0001}
+.badge{background:#f59e0b;color:#000;padding:3px 8px;border-radius:10px;font-size:10px;font-weight:800}
+.tabs{display:flex;gap:6px;margin-bottom:8px}
+.tab{flex:1;padding:10px;text-align:center;border-radius:8px;font-weight:800;font-size:12px;cursor:pointer;border:1px solid #cbd5e1;background:#e2e8f0}
+.tab.active{background:#065f46;color:#fff}
+input,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;margin-top:5px;font-size:13px}
+.btn{width:100%;padding:11px;border:none;border-radius:8px;font-weight:800;margin-top:6px}
+.g{background:#059669;color:#fff}
+.b{background:#2563eb;color:#fff}
+.o{background:#f59e0b}
+.d{background:#0f172a;color:#fff}
+table{width:100%;font-size:10px;border-collapse:collapse}
+th{background:#065f46;color:#fff;padding:6px}
+td{padding:6px;border-bottom:1px solid #e2e8f0}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header>
+<h1>🏫 GBELS SAYED JADAL SHAH - CELL HEAD</h1>
+<p>TEO Moro | 416030442 | 76 Feeders | Teachers & Students + Monthly Report</p>
+</header>
+<div style="max-width:1100px;margin:auto;padding:6px">
+<div class="card">
+<span class="badge">⭐ CELL HEAD SCHOOL</span>
+<div style="display:flex;gap:10px;margin-top:6px;font-size:11px"><span>Teachers: <b id="tCount">0</b></span><span>Students: <b id="sCount">0</b></span><span>Schools: <b>76</b></span></div>
+</div>
+
+<div class="card">
+<div class="tabs">
+<div class="tab active" onclick="switchTab('teacher')" id="tabT">👨‍🏫 Teachers</div>
+<div class="tab" onclick="switchTab('student')" id="tabS">👨‍🎓 Students</div>
+<div class="tab" onclick="switchTab('report')" id="tabR">📊 Monthly Report</div>
+</div>
+
+<!-- TEACHER FORM -->
+<div id="teacherForm">
+<input list="sl" id="schoolT" placeholder="Feeder School - LALIA..."><datalist id="sl"></datalist>
+<input id="teacherName" placeholder="Teacher Name">
+<input id="semisT" type="number" placeholder="Teacher SEMIS / Personal No">
+<select id="designation"><option>PST</option><option>JEST</option><option>HST</option><option>HT</option><option>Contract</option></select>
+<select id="statusT"><option>Present</option><option>Absent</option><option>Leave</option></select>
+<select id="monthT"><option>October 2026</option><option>November 2026</option><option>December 2026</option></select>
+<button class="btn g" onclick="addTeacher()">✅ SAVE TEACHER</button>
+</div>
+
+<!-- STUDENT FORM -->
+<div id="studentForm" class="hidden">
+<input list="sl2" id="schoolS" placeholder="Feeder School - LALIA..."><datalist id="sl2"></datalist>
+<input id="studentName" placeholder="Student Name">
+<input id="grNo" placeholder="GR No">
+<select id="classS"><option>Class 1</option><option>Class 2</option><option>Class 3</option><option>Class 4</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option></select>
+<select id="gender"><option>Boy</option><option>Girl</option></select>
+<select id="monthS"><option>October 2026</option><option>November 2026</option><option>December 2026</option></select>
+<button class="btn b" onclick="addStudent()">✅ SAVE STUDENT</button>
+</div>
+
+<!-- REPORT FORM -->
+<div id="reportForm" class="hidden">
+<p style="font-size:12px;text-align:center;padding:10px;background:#fef3c7;border-radius:8px">📋 Monthly Report - Cell Head GBELS SAYED JADAL SHAH - All 76 Feeders Teachers + Students</p>
+<button class="btn o" onclick="generateReport()">📊 GENERATE MONTHLY REPORT</button>
+<button class="btn d" onclick="exportAll()">📥 EXPORT FULL REPORT (Teachers+Students) CSV</button>
+</div>
+</div>
+
+<div class="card">
+<input id="q" placeholder="🔍 Search school/teacher/student..." oninput="render()">
+<div style="overflow:auto;max-height:400px;margin-top:6px">
+<table>
+<thead><tr><th>#</th><th>Type</th><th>Feeder School</th><th>Name</th><th>Class/Desig</th><th>GR/SEMIS</th><th>Month</th><th>X</th></tr></thead>
+<tbody id="tb"></tbody>
+</table>
+</div>
+</div>
+</div>
+
+<script>
+const feeders=["GBPS LALIA 416030366","GBPS IBRAHIM KEERIO 416030367","GBPS MUHAMMAD IBRAHIM 416030368","GBPS KARIM BUX 416030369","GBPS HAJI KHAN 416030370","GBPS MITHO KHAN 416030371","GBPS ALI NAWAZ 416030372","GBPS GHULAM MUSTAFA 416030373","GBPS WALI MUHAMMAD 416030374","GBPS PIR BUX 416030375","GBPS QAZI ARIF 416030376","GBPS ARZI BHUTTO 416030377","GBPS MUHAMMAD YOUSIF 416030378","GBPS SOOMAR CHANDIO 416030379","GBPS ALI AKBAR 416030380","GBPS HAJI KHAMISO 416030381","GBPS MUHAMMAD MOOSA 416030382","GBPS HAJI ALI BUX 416030383","GBPS MUHAMMAD SIDDIQUE 416030384","GBPS GHULAM NABI 416030385","GBPS ALI HASSAN 416030386","GBPS MUHAMMAD SALEH 416030387","GBPS GHULAM HUSSAIN 416030388","GBPS ABDUL GHANI 416030389","GBPS GHULAM RASOOL 416030390","GBPS LAKHMIR KHAN 416030391","GBPS MUHAMMAD USMAN 416030392","GBPS KHAMISO KHAN 416030393","GBPS ALI MURAD 416030394","GBPS GHULAM QADIR 416030395","GBPS MUHAMMAD RAMZAN 416030396","GBPS MUHAMMAD PANAH 416030397","GBPS KHAIR MUHAMMAD 416030398","GBPS WAHID BUX 416030399","GBPS HABIBULLAH 416030400","GBPS GHULAM MUHAMMAD 416030401","GBPS HAJI MEER MUHAMMAD 416030402","GBPS ABDUL REHMAN 416030403","GBPS MUHAMMAD HASSAN 416030404","GBPS ALI GOHAR 416030405","GBPS FAQEER MUHAMMAD 416030406","GBPS GHULAM SARWAR 416030407","GBPS KHUDA BUX 416030408","GBPS MUHAMMAD HAYAT 416030409","GBPS ALI NAWAZ KHAN 416030410","GBPS GHULAM MUSTAFA KHAN 416030411","GBPS MUHAMMAD BUX 416030412","GBPS ABDUL SATTAR 416030413","GBPS MUHAMMAD AMIN 416030414","GBPS GHULAM ABBAS 416030415","GBPS MUHAMMAD IBRAHIM BHUTTO 416030416","GBPS HAJI MUHAMMAD 416030417","GBPS MUHAMMAD YAQOOB 416030418","GBPS ALI BUX 416030419","GBPS GHULAM MUHAMMAD LASHARI 416030420","GBPS MUHAMMAD ALI 416030421","GBPS AHMED KHAN 416030422","GBPS MUHAMMAD KHAN 416030423","GBPS GHULAM HUSSAIN CHANDIO 416030424","GBPS QURBAN ALI 416030425","GBPS SAIFULLAH 416030426","GBPS MUHAMMAD PUNHAL 416030427","GBPS LAL BUX 416030428","GBPS MUHAMMAD ACHRA 416030429","GBPS GHULAM MUHAMMAD CHANDIO 416030430","GBPS HAJI KHAN CHANDIO 416030431","GBPS ABDUL KARIM 416030432","GBPS MUHAMMAD JUMAN 416030433","GBPS GHULAM ALI 416030434","GBPS ALI MUHAMMAD 416030435","GBPS MUHAMMAD HASHIM 416030436","GBPS GHULAM RASOOL BHUTTO 416030437","GBPS MUHAMMAD SIDDIQUE BHUTTO 416030438","GBPS KAMAL KHAN 416030439","GBPS HAJI GHULAM NABI 416030440","GBPS MUHAMMAD UMAR 416030441"];
+let db=JSON.parse(localStorage.getItem('cellFull')||'[]');
+let dl=document.getElementById('sl');let dl2=document.getElementById('sl2');
+feeders.forEach(s=>{let o=document.createElement('option');o.value=s;dl.appendChild(o);let o2=document.createElement('option');o2.value=s;dl2.appendChild(o2);});
+function save(){localStorage.setItem('cellFull',JSON.stringify(db));}
+function switchTab(t){
+document.getElementById('teacherForm').classList.add('hidden');
+document.getElementById('studentForm').classList.add('hidden');
+document.getElementById('reportForm').classList.add('hidden');
+document.getElementById('tabT').classList.remove('active');
+document.getElementById('tabS').classList.remove('active');
+document.getElementById('tabR').classList.remove('active');
+if(t=='teacher'){document.getElementById('teacherForm').classList.remove('hidden');document.getElementById('tabT').classList.add('active');}
+if(t=='student'){document.getElementById('studentForm').classList.remove('hidden');document.getElementById('tabS').classList.add('active');}
+if(t=='report'){document.getElementById('reportForm').classList.remove('hidden');document.getElementById('tabR').classList.add('active');}
+}
+function addTeacher(){
+let school=document.getElementById('schoolT').value,teacher=document.getElementById('teacherName').value,semis=document.getElementById('semisT').value,des=document.getElementById('designation').value,month=document.getElementById('monthT').value,status=document.getElementById('statusT').value;
+if(!school||!teacher||!semis){alert('Fill all');return;}
+db.unshift({id:Date.now(),type:'Teacher',school,name:teacher,code:semis,extra:des,month,status});
+save();render();document.getElementById('teacherName').value='';document.getElementById('semisT').value='';
+}
+function addStudent(){
+let school=document.getElementById('schoolS').value,name=document.getElementById('studentName').value,gr=document.getElementById('grNo').value,cls=document.getElementById('classS').value,month=document.getElementById('monthS').value,gender=document.getElementById('gender').value;
+if(!school||!name||!gr){alert('Fill all');return;}
+db.unshift({id:Date.now(),type:'Student',school,name,code:gr,extra:cls+'/'+gender,month,status:'Enrolled'});
+save();render();document.getElementById('studentName').value='';document.getElementById('grNo').value='';
+}
+function del(id){db=db.filter(x=>x.id!=id);save();render();}
+function render(){
+let q=document.getElementById('q').value.toLowerCase();
+let f=db.filter(x=>(x.school+x.name).toLowerCase().includes(q));
+document.getElementById('tb').innerHTML=f.map((x,i)=>`<tr><td>${i+1}</td><td>${x.type=='Teacher'?'👨‍🏫':'👨‍🎓'}</td><td>${x.school.substring(0,18)}</td><td>${x.name}</td><td>${x.extra}</td><td>${x.code}</td><td>${x.month}</td><td><button onclick="del(${x.id})">X</button></td></tr>`).join('');
+document.getElementById('tCount').innerText=db.filter(x=>x.type=='Teacher').length;
+document.getElementById('sCount').innerText=db.filter(x=>x.type=='Student').length;
+}
+function generateReport(){
+let t=db.filter(x=>x.type=='Teacher').length;let s=db.filter(x=>x.type=='Student').length;
+alert(`MONTHLY REPORT - GBELS SAYED JADAL SHAH (CELL HEAD)\\n\\nTotal Feeder Schools: 76\\nTotal Teachers: ${t}\\nTotal Students: ${s}\\n\\nReport Generated for TEO Moro!`);
+}
+function exportAll(){
+if(!db.length){alert('No data');return;}
+let csv="Type,Cell Head,Feeder School,Name,Class/Designation,GR/SEMIS,Month,Status\n";
+db.forEach(x=>{csv+=`${x.type},GBELS SAYED JADAL SHAH,"${x.school}","${x.name}",${x.extra},${x.code},${x.month},${x.status}\n`;});
+let b=new Blob([csv],{type:'text/csv'});let a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='GBELS_CellHead_Teachers_Students_Monthly_Report.csv';a.click();
+}
+render();
+</script>
+</body>
+</html>
